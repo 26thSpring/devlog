@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import './Main.scss';
 
 class Main extends Component {
-    render() {
-        return(
-            <div></div>
-        )
-    }
+   render() {
+      return <div />;
+   }
 }
 
-export default Main
+export default Main;

@@ -1,0 +1,10 @@
+.HeaderNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.HeaderNav__Link {
+  text-decoration: none;
+}
+.HeaderNav__Link:visited {
+}
