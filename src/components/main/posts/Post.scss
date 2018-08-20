@@ -1,0 +1,46 @@
+.Post {
+  @media (max-width: 2000px) {
+    width: 22%;
+    @media (max-width: 1600px) {
+      width: 30%;
+      @media (max-width: 1200px) {
+        width: 45.5%;
+        @media (max-width: 1000px) {
+          width: 44%;
+          @media (max-width: 800px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 1px solid violet;
+  margin: 0.875rem;
+}
+.Post::before {
+  content: "";
+  display: block;
+  padding-top: 30%;
+
+  @media (max-width: 2000px) {
+    padding-top: 30%;
+    @media (max-width: 1600px) {
+      padding-top: 30%;
+      @media (max-width: 1200px) {
+        padding-top: 25%;
+        @media (max-width: 1000px) {
+          padding-top: 30%;
+          @media (max-width: 800px) {
+            padding-top: 60%;
+          }
+        }
+      }
+    }
+  }
+}
+.Post__thumbnail {
+}

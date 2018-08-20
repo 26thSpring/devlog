@@ -9,8 +9,8 @@ import tags from 'img/tags.png';
 
 const categoryList = [
    { name: '트렌딩', title: 'trending', icon: trending },
-   { name: '최신 포스트', title: 'posts', icon: recent },
-   { name: '정렬', title: 'sorting', icon: sorting },
+   { name: '최신 포스트', title: 'recent', icon: recent },
+   { name: '정렬', title: 'sort', icon: sorting },
    { name: '태그', title: 'tags', icon: tags }
 ];
 
@@ -20,7 +20,11 @@ class HeaderNav extends Component {
          <div className="HeaderNav">
             {categoryList.map((value, index) => {
                return (
-                  <Link className="HeaderNav__Link" to={'/' + value.title}>
+                  <Link
+                     className="HeaderNav__Link"
+                     to={'/' + value.title}
+                     key={value.title}
+                  >
                      <HeaderCategory
                         category={value.name}
                         url={value.icon}
