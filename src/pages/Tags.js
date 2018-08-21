@@ -1,9 +1,10 @@
 import React from 'react';
+import './Tags.scss';
 
 const Tags = ({ match }) => {
    return (
       <div className="TagsTemplate">
-         <div className="Tags">태그들...</div>
+         <div className="TagsSection" />
       </div>
    );
 };
