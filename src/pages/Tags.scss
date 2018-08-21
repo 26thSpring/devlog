@@ -1,11 +1,35 @@
 .TagsTemplate {
   width: 100%;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
   position: relative;
-  overflow-y: scroll;
 }
-.TagsSection h2 {
-  margin-left: 0.875rem;
-  margin-bottom: 0.4rem;
+.TagsSection {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.2rem;
+}
+.Tags__head {
+  display: flex;
+  padding: 0.875rem;
+}
+.TagsCagtegory {
+  display: flex;
+  align-items: center;
+  margin-right: 0.875rem;
+}
+.TagsCagtegory__name {
+  margin-left: 0.3rem;
+  font-size: 23px;
+  font-weight: 400;
+}
+.TagsCagtegory__img {
+  fill: violet;
+  color: violet;
+}
+.Tags__main {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
 }
