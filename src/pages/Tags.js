@@ -23,6 +23,26 @@ const Tags = ({ match }) => {
                <Tag tagName="Database" />
                <Tag tagName="Python" />
                <Tag tagName="Amazon AWS" />
+               <Tag tagName="HTML5" />
+               <Tag tagName="CSS3" />
+               <Tag tagName="Javascript" />
+               <Tag tagName="JQuery" />
+               <Tag tagName="React" />
+               <Tag tagName="React-Native" />
+               <Tag tagName="Java" />
+               <Tag tagName="Database" />
+               <Tag tagName="Python" />
+               <Tag tagName="Amazon AWS" />
+               <Tag tagName="HTML5" />
+               <Tag tagName="CSS3" />
+               <Tag tagName="Javascript" />
+               <Tag tagName="JQuery" />
+               <Tag tagName="React" />
+               <Tag tagName="React-Native" />
+               <Tag tagName="Java" />
+               <Tag tagName="Database" />
+               <Tag tagName="Python" />
+               <Tag tagName="Amazon AWS" />
             </div>
          </div>
       </div>

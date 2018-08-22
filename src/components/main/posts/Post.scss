@@ -2,6 +2,7 @@
   position: relative;
   min-width: 15rem;
   margin: 0.875rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
 
   @media (max-width: 2000px) {
     width: calc(25% - 1.75rem);
@@ -28,8 +29,14 @@
   display: flex;
   justify-content: center;
   align-self: center;
-  background-color: rgba(0, 0, 100, 0.06);
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 100, 0, 0.1);
+}
+.Post__wrapper {
+  position: relative;
+  box-shadow: 0px -4px 16px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
 }
 .Post__head {
   display: flex;
@@ -39,7 +46,22 @@
   padding-left: 1.3rem;
   padding-right: 1.3rem;
   background-color: white;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.Post__head__profile {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  padding: 0.35rem;
+  background-color: white;
+  border-radius: 10rem;
+  transform: translateY(-50%);
+  box-shadow: 0px -4px 16px rgba(0, 0, 0, 0.06);
+
+  .profileWrapper {
+    padding: 0.4rem;
+    border-radius: 10rem;
+    background-color: rgba(0, 100, 0, 0.15);
+  }
 }
 .Post__content {
   display: flex;
@@ -47,8 +69,6 @@
   flex-direction: column;
   padding-left: 1.3rem;
   padding-right: 1.3rem;
-  background-color: white;
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
 }
 .Post__content span {
   padding-top: 1rem;

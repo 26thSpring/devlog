@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import 'App.scss';
+import './App.scss';
 import { Home, About } from 'pages/index.async.js';
 import Header from 'components/header/Header';
 import Main from 'components/main/Main';

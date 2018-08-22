@@ -16,22 +16,30 @@ class Post extends Component {
                   </object>
                </Link>
             </div>
-            <div className="Post__head">
-               <span className="Post__head__name">스물여섯번째 봄</span>
-               <Link className="Post__head__title" to="/">
-                  <span>Welcome to devlog!</span>
-               </Link>
-               <span className="Post__head__regdate">1일 전 · 2개의 댓글</span>
-               <div className="Post__head__profile">
-                  <object type="image/svg+xml" data={defaultProfileImage}>
-                     현재 브라우저는 iframe을 지원하지 않습니다.
-                  </object>
+            <div className="Post__wrapper">
+               <div className="Post__head">
+                  <span className="Post__head__name">스물여섯번째 봄</span>
+                  <Link className="Post__head__title" to="/">
+                     <span>Welcome to devlog!</span>
+                  </Link>
+                  <span className="Post__head__regdate">
+                     1일 전 · 2개의 댓글
+                  </span>
+                  <div className="Post__head__profile">
+                     <object
+                        className="profileWrapper"
+                        type="image/svg+xml"
+                        data={defaultProfileImage}
+                     >
+                        현재 브라우저는 iframe을 지원하지 않습니다.
+                     </object>
+                  </div>
                </div>
-            </div>
-            <div className="Post__content">
-               <span>
-                  사람인 ok 잡코리아 ok 인크루트 ok 게임잡 ok 로켓펀치 ok
-               </span>
+               <div className="Post__content">
+                  <span>
+                     사람인 ok 잡코리아 ok 인크루트 ok 게임잡 ok 로켓펀치 ok
+                  </span>
+               </div>
             </div>
          </div>
       );
