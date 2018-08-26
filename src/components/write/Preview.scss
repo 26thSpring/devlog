@@ -1,0 +1,14 @@
+.previewArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  padding: 1.5rem;
+  background-color: white;
+}
+.previewArea__title {
+  font-weight: 400;
+  font-size: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+.previewArea__content {
+}

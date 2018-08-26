@@ -5,7 +5,7 @@
 }
 .MainHead__notLogIn {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .MainHead__notLogIn__loginButton {
   font-size: 18px;
@@ -15,4 +15,14 @@
 .MainHead__profileImage {
 }
 .MainHead__settings {
+}
+.btn_writePost {
+  background-color: rgba(0, 50, 200, 0.55);
+  font-weight: 400;
+  color: white;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.2rem;
 }
