@@ -1,4 +1,5 @@
 import React from 'react';
+import './Preview.scss';
 
 const Preview = ({ title, content }) => {
    return (

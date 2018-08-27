@@ -11,9 +11,7 @@ class Post extends Component {
             <div className="Post_top">
                <Link className="Post__thumbnail" to="/">
                   <div className="whiteSpace" />
-                  <object type="image/svg+xml" data={defaultThumbnailImage}>
-                     현재 브라우저는 iframe을 지원하지 않습니다.
-                  </object>
+                  <img src={defaultThumbnailImage} alt="defaulThumnail" />
                </Link>
             </div>
             <div className="Post__wrapper">
@@ -26,13 +24,13 @@ class Post extends Component {
                      1일 전 · 2개의 댓글
                   </span>
                   <div className="Post__head__profile">
-                     <object
-                        className="profileWrapper"
-                        type="image/svg+xml"
-                        data={defaultProfileImage}
-                     >
-                        현재 브라우저는 iframe을 지원하지 않습니다.
-                     </object>
+                     <Link to="/">
+                        <img
+                           className="profileWrapper"
+                           src={defaultProfileImage}
+                           alt="defaultProfile"
+                        />
+                     </Link>
                   </div>
                </div>
                <div className="Post__content">

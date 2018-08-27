@@ -7,8 +7,10 @@
   padding: 1.5rem;
 }
 .writeFormArea__title {
+  display: flex;
+  align-items: center;
   font-family: "Noto Sans KR";
-  flex: 0.5 0 0;
+  flex: 0 0 4.5rem;
   padding-left: 0.3rem;
   color: rgba(230, 250, 255, 1);
   font-size: 2rem;
@@ -21,14 +23,29 @@
   }
 }
 .writeFormArea__content {
-  flex: 6 0 0;
+  flex: 1 0 0;
   font-family: D2 Coding;
   font-size: 1.1rem;
   color: skyblue;
   padding-top: 1rem;
   border: 0;
   background-color: transparent;
+  resize: none;
+
   &:focus {
     outline: none;
   }
+}
+.writeFormArea__footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+.writeFormArea__footer__btnUpload {
+  &:hover {
+    cursor: pointer;
+  }
+}
+#upload_thumnail {
+  display: none;
 }
