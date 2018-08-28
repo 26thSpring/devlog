@@ -23,7 +23,7 @@ const WriterHead = ({ onTitleChange }) => {
                임시저장
             </Link>
             <Link to="/" className="WriterHead__buttons__submit">
-               업로드
+               작성하기
             </Link>
             <div className="WriterHead__buttons__utils">
                <img src={utils} alt="도구 모음" />

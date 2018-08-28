@@ -2,36 +2,25 @@
   display: flex;
   flex-direction: column;
   flex: 1.2 0 0;
-  background-color: rgba(0, 20, 30, 0.85);
+  background-color: rgba(0, 15, 30, 0.9);
   color: rgba(235, 240, 255, 0.95);
   padding: 1.5rem;
 }
-.writeFormArea__title {
-  display: flex;
-  align-items: center;
-  font-family: "Noto Sans KR";
-  flex: 0 0 4.5rem;
-  padding-left: 0.3rem;
-  color: rgba(230, 250, 255, 1);
-  font-size: 2rem;
-  font-weight: 500;
-  border: 0;
-  background-color: transparent;
-  border-bottom: 1px solid rgba(0, 255, 200, 0.9);
-  &:focus {
-    outline: none;
-  }
-}
 .writeFormArea__content {
   flex: 1 0 0;
-  font-family: D2 Coding;
-  font-size: 1.1rem;
+  font-family: "Inconsolata";
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 2.1rem;
   color: skyblue;
-  padding-top: 1rem;
   border: 0;
   background-color: transparent;
   resize: none;
+  overflow-y: scroll;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
   &:focus {
     outline: none;
   }
