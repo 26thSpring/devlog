@@ -1,23 +1,19 @@
 import React from 'react';
-import './Writer.scss';
+import './WriterContent.scss';
 import imageUpload from 'img/writer/imageUpload.svg';
 
-const Writer = ({ onTitleChange, onContentChange }) => {
+const Writer = ({ onContentChange }) => {
    return (
       <div className="writeFormArea">
-         <input
-            type="text"
-            className="writeFormArea__title"
-            placeholder="제목을 입력하세요"
-            onChange={e => {
-               onTitleChange(e.target.value);
-            }}
-         />
          <textarea
             className="writeFormArea__content"
-            placeholder="마크다운 에디터"
+            placeholder="당신의 이야기를 적어주세요"
             onChange={e => {
-               onContentChange(e.target.value);
+               const newVal = e.target.value
+                  .split('\n')
+                  .map(line => line)
+                  .join('<br/>');
+               onContentChange(newVal);
             }}
          />
          <div className="writeFormArea__footer">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './PostWriter.scss';
-import { Writer, Preview } from 'components/index.async';
+import { WriterHead, WriterContent, Preview } from 'components/index.async';
 
 class PostWriter extends Component {
    state = {};
@@ -19,11 +19,9 @@ class PostWriter extends Component {
    render() {
       return (
          <div className="PostWriterTemplate">
+            <WriterHead onTitleChange={this.onTitleChange} />
             <div className="PostWriterSection">
-               <Writer
-                  onTitleChange={this.onTitleChange}
-                  onContentChange={this.onContentChange}
-               />
+               <WriterContent onContentChange={this.onContentChange} />
                <Preview title={this.state.title} content={this.state.content} />
             </div>
          </div>

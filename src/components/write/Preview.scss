@@ -8,15 +8,20 @@
 .previewArea__title {
   display: flex;
   align-items: center;
-  flex: 0 0 4.5rem;
-  font-weight: 500;
-  font-size: 2.1rem;
-  color: rgba(0, 0, 0, 0.7);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  flex: 0 0 auto;
+  font-weight: 600;
+  font-size: 2.3rem;
+  padding-left: 0.3rem;
+  padding-bottom: 0.3rem;
+  color: rgba(0, 0, 0, 0.85);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+  word-break: break-word;
 }
 .previewArea__content {
+  flex: 1 0 auto;
   padding: 0.2rem;
   padding-top: 1rem;
   font-size: 1.2rem;
   font-weight: 200;
+  word-break: break-word;
 }
