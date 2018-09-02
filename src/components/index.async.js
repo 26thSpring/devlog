@@ -1,6 +1,5 @@
 import asyncRoute from 'lib/asyncRoute';
 
-export const MainHead = asyncRoute(() => import('./main/MainHead'));
 export const Tag = asyncRoute(() => import('./main/tags/Tag'));
 export const WriterHead = asyncRoute(() => import('./write/WriterHead'));
 export const WriterContent = asyncRoute(() => import('./write/WriterContent'));

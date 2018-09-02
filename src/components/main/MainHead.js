@@ -1,38 +1,94 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './MainHead.scss';
 import { Link } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
+import { GoogleLogout } from 'react-google-login';
+import profileImage from 'img/defaultProfileImage.svg';
 
-const responseGoogle = response => {
-   console.log(response);
-};
-
-const MainHead = () => {
-   return (
-      <div className="MainHead">
-         <div className="MainHead__notLogIn">
+class MainHead extends Component {
+   componentDidMount() {
+      !sessionStorage.getItem('loginUser')
+         ? this.setState({ login: false })
+         : this.setState({ login: true });
+   }
+   state = {
+      viewProfile: false,
+      name: '',
+      profileImage: ''
+   };
+   responseGoogle = response => {
+      console.log(response);
+      this.setState({
+         login: true,
+         name: response.profileObj.name,
+         profileImage: response.profileObj.imageUrl
+      });
+      sessionStorage.setItem('loginUser', response.profileObj.email);
+   };
+   googleLogout = () => {
+      console.log('googleLogout');
+      this.setState({
+         login: false,
+         viewProfile: false
+      });
+      sessionStorage.removeItem('loginUser');
+   };
+   render() {
+      return (
+         <div className="MainHead">
             <Link to="/WritePost">
                <div className="btn_writePost">새 포스트 작성</div>
             </Link>
-            {/* <button
-               className="MainHead__notLogIn__loginButton"
-               onClick={onSignIn}
-            >
-               로그인
-            </button> */}
-            <GoogleLogin
-               clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-               buttonText="Login"
-               onSuccess={responseGoogle}
-               onFailure={responseGoogle}
-            />
+            {!this.state.login ? (
+               <GoogleLogin
+                  className="GoogleLogin"
+                  clientId="725851416084-g4n4t67kgo93hu9ccmlt7314hretdvom.apps.googleusercontent.com"
+                  buttonText="구글 계정으로 로그인"
+                  onSuccess={this.responseGoogle}
+                  onFailure={this.responseGoogle}
+               />
+            ) : (
+               <div
+                  className="MainHead__profile"
+                  onClick={e => {
+                     this.profileMenu.focus();
+                     this.setState({ viewProfile: true });
+                  }}
+                  tabIndex={-1}
+               >
+                  <img
+                     className="MainHead__profile__thumnail"
+                     src={this.state.profileImage}
+                     alt="aaa"
+                  />
+                  <div className="settings__wrapper">
+                     <div
+                        ref={ref => {
+                           this.profileMenu = ref;
+                        }}
+                        className={`MainHead__profile__content ${!this.state
+                           .viewProfile && 'hidden'}`}
+                        onBlur={e => {
+                           this.setState({ viewProfile: false });
+                        }}
+                        tabIndex={-1}
+                     >
+                        <div className="settings_item">내 프로필</div>
+                        <div className="settings_item">새 글 작성</div>
+                        <div className="settings_item">임시 글</div>
+                        <div className="settings_item">설정</div>
+                        <GoogleLogout
+                           className="GoogleLogout"
+                           buttonText="로그아웃"
+                           onLogoutSuccess={this.googleLogout}
+                        />
+                     </div>
+                  </div>
+               </div>
+            )}
          </div>
-         <div className="MainHead__logIn">
-            <div className="MainHead__profileImage" />
-            <div className="MainHead__settings" />
-         </div>
-      </div>
-   );
-};
+      );
+   }
+}
 
 export default MainHead;

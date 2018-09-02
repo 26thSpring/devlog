@@ -18,20 +18,18 @@ class Post extends Component {
                <div className="Post__head">
                   <span className="Post__head__name">스물여섯번째 봄</span>
                   <Link className="Post__head__title" to="/">
-                     <span>Welcome to devlog!</span>
+                     <span>노토 산스 코리아 / Apple SD Gothic Neo</span>
                   </Link>
                   <span className="Post__head__regdate">
                      1일 전 · 2개의 댓글
                   </span>
-                  <div className="Post__head__profile">
-                     <Link to="/">
-                        <img
-                           className="profileWrapper"
-                           src={defaultProfileImage}
-                           alt="defaultProfile"
-                        />
-                     </Link>
-                  </div>
+                  <Link className="Post__head__profile" to="/">
+                     <img
+                        className="profileWrapper"
+                        src={defaultProfileImage}
+                        alt="defaultProfile"
+                     />
+                  </Link>
                </div>
                <div className="Post__content">
                   <span>

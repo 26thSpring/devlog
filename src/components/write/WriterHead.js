@@ -11,6 +11,7 @@ const WriterHead = ({ onTitleChange }) => {
             <img src={backBtn} alt="뒤로 가기" />
          </Link>
          <input
+            name="title"
             className="WriterHead__title"
             type="text"
             placeholder="제목을 입력하세요"
@@ -22,9 +23,11 @@ const WriterHead = ({ onTitleChange }) => {
             <Link to="/" className="WriterHead__buttons__temporarySubmit">
                임시저장
             </Link>
-            <Link to="/" className="WriterHead__buttons__submit">
-               작성하기
-            </Link>
+            <input
+               type="submit"
+               value="작성하기"
+               className="WriterHead__buttons__submit"
+            />
             <div className="WriterHead__buttons__utils">
                <img src={utils} alt="도구 모음" />
             </div>

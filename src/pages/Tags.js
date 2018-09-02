@@ -52,10 +52,7 @@ const Tags = ({ match }) => {
 const TagsCategory = ({ name, img }) => {
    return (
       <div className="TagsCagtegory">
-         <object className="TagsCagtegory__img" type="image/svg+xml" data={img}>
-            현재 브라우저는 iframe을 지원하지 않습니다.
-         </object>
-         {/* <img className="TagsCagtegory__img" src={img} alt={name} /> */}
+         <img src={img} alt={img} />
          <span className="TagsCagtegory__name">{name}</span>
       </div>
    );

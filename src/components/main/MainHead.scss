@@ -1,23 +1,12 @@
 .MainHead {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   padding: 1.75rem;
   margin-bottom: 0.2rem;
 }
-.MainHead__notLogIn {
-  display: flex;
-  justify-content: space-between;
-}
-.MainHead__notLogIn__loginButton {
-  font-size: 18px;
-}
-.MainHead__logIn {
-}
-.MainHead__profileImage {
-}
-.MainHead__settings {
-}
 .btn_writePost {
-  background-color: rgba(0, 50, 200, 0.55);
+  background-color: rgba(0, 30, 225, 0.8);
   font-weight: 400;
   color: white;
   padding-top: 0.3rem;
@@ -25,4 +14,72 @@
   padding-left: 1rem;
   padding-right: 1rem;
   border-radius: 0.2rem;
+}
+.MainHead__profile {
+  position: relative;
+  right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &:focus {
+    outline: none;
+  }
+}
+.MainHead__profile__thumnail {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.settings__wrapper {
+  position: relative;
+  z-index: 10;
+}
+.MainHead__profile__content {
+  position: absolute;
+  right: -0.5rem;
+  top: 2.3rem;
+  width: 10.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: white;
+  z-index: 2;
+  &:focus {
+    outline: none;
+  }
+}
+.settings_item {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  margin-top: 0.1rem;
+  margin-top: 0.1rem;
+}
+.hidden {
+  visibility: hidden;
+}
+.GoogleLogin {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(200, 0, 0, 0.5);
+  border-radius: 3px;
+  background-color: #d63b31;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+}
+.GoogleLogout {
+  padding: 0;
+  margin: 0;
+  text-align: start;
+  font-weight: 300;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  margin-top: 0.1rem;
+  margin-top: 0.1rem;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.8);
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './Main.scss';
 import { Recent, Trending, Sort, Tags } from 'pages/index.async.js';
-import { MainHead } from 'components/index.async.js';
+import MainHead from './MainHead';
 
 class Main extends Component {
    render() {

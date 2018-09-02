@@ -6,6 +6,7 @@ const Writer = ({ onContentChange }) => {
    return (
       <div className="writeFormArea">
          <textarea
+            name="content"
             className="writeFormArea__content"
             placeholder="당신의 이야기를 적어주세요"
             onChange={e => {

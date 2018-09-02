@@ -18,13 +18,19 @@ class PostWriter extends Component {
    };
    render() {
       return (
-         <div className="PostWriterTemplate">
+         <form
+            className="PostWriterTemplate"
+            method="POST"
+            action={`http://localhost:3002/api/posts/${sessionStorage.getItem(
+               'loginUser'
+            )}`}
+         >
             <WriterHead onTitleChange={this.onTitleChange} />
             <div className="PostWriterSection">
                <WriterContent onContentChange={this.onContentChange} />
                <Preview title={this.state.title} content={this.state.content} />
             </div>
-         </div>
+         </form>
       );
    }
 }

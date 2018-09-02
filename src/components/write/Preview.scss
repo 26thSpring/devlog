@@ -3,7 +3,7 @@
   flex-direction: column;
   flex: 1 0 0;
   padding: 1.5rem;
-  background-color: rgba(100, 0, 0, 0.05);
+  background-color: rgba(0, 0, 100, 0.05);
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
@@ -18,8 +18,8 @@
   font-size: 3rem;
   padding-left: 0.5rem;
   padding-bottom: 0.8rem;
-  color: rgba(60, 0, 0, 0.9);
-  border-bottom: 1px solid rgba(100, 0, 0, 0.25);
+  color: rgba(0, 0, 60, 0.9);
+  border-bottom: 1px solid rgba(0, 0, 100, 0.25);
   word-break: break-word;
 }
 .previewArea__content {

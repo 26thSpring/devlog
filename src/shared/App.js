@@ -7,6 +7,13 @@ import { hot } from 'react-hot-loader';
 import { PostWriter } from 'pages/index.async';
 
 class App extends Component {
+   componentDidMount() {
+      //   fetch('http://localhost:3002/api/users')
+      //      .then(res => res.json())
+      //      .then(json => console.log(json))
+      //      .catch(err => console.log(err));
+   }
+
    render() {
       return (
          <div className="App">
