@@ -23,10 +23,6 @@
   align-items: center;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
-
-  &:focus {
-    outline: none;
-  }
 }
 .MainHead__profile__thumnail {
   width: 3rem;
@@ -48,7 +44,7 @@
   padding: 0.7rem;
   border: 1px solid rgba(0, 0, 0, 0.3);
   background-color: white;
-  z-index: 2;
+  z-index: 10;
   &:focus {
     outline: none;
   }
@@ -60,7 +56,8 @@
   margin-top: 0.1rem;
 }
 .hidden {
-  visibility: hidden;
+  position: fixed;
+  right: -50rem;
 }
 .GoogleLogin {
   font-size: 1rem;

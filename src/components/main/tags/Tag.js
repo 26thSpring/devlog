@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Tag.scss';
 
-const Tag = ({ tagName }) => {
-   return (
-      <Link to={`/tags/${tagName}`}>
-         <div className="Tag">{tagName}</div>
-      </Link>
-   );
-};
+class Tag extends Component {
+   render() {
+      return (
+         <Link to={`/tags/${this.props.tagName}`}>
+            <div className="Tag">{this.props.tagName}</div>
+         </Link>
+      );
+   }
+}
 
 export default Tag;

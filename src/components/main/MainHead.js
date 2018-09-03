@@ -6,6 +6,10 @@ import { GoogleLogout } from 'react-google-login';
 import profileImage from 'img/defaultProfileImage.svg';
 
 class MainHead extends Component {
+   constructor() {
+      super();
+      sessionStorage.setItem('loginUser', 'foelsk56@gmail.com');
+   }
    componentDidMount() {
       !sessionStorage.getItem('loginUser')
          ? this.setState({ login: false })
@@ -33,6 +37,10 @@ class MainHead extends Component {
       });
       sessionStorage.removeItem('loginUser');
    };
+   handleClick = () => {
+      this.setState({ viewProfile: !this.state.viewProfile });
+      //this.profileMenu.focus();
+   };
    render() {
       return (
          <div className="MainHead">
@@ -48,42 +56,35 @@ class MainHead extends Component {
                   onFailure={this.responseGoogle}
                />
             ) : (
-               <div
-                  className="MainHead__profile"
-                  onClick={e => {
-                     this.profileMenu.focus();
-                     this.setState({ viewProfile: true });
-                  }}
-                  tabIndex={-1}
-               >
+               <div className="MainHead__profile">
                   <img
                      className="MainHead__profile__thumnail"
+                     onClick={this.handleClick.bind(this)}
                      src={this.state.profileImage}
                      alt="aaa"
                   />
-                  <div className="settings__wrapper">
-                     <div
-                        ref={ref => {
-                           this.profileMenu = ref;
-                        }}
-                        className={`MainHead__profile__content ${!this.state
-                           .viewProfile && 'hidden'}`}
-                        onBlur={e => {
-                           this.setState({ viewProfile: false });
-                        }}
-                        tabIndex={-1}
-                     >
-                        <div className="settings_item">내 프로필</div>
-                        <div className="settings_item">새 글 작성</div>
-                        <div className="settings_item">임시 글</div>
-                        <div className="settings_item">설정</div>
-                        <GoogleLogout
-                           className="GoogleLogout"
-                           buttonText="로그아웃"
-                           onLogoutSuccess={this.googleLogout}
-                        />
+                  {this.state.viewProfile && (
+                     <div className="settings__wrapper">
+                        <div
+                           ref={ref => {
+                              this.profileMenu = ref;
+                           }}
+                           className={`MainHead__profile__content ${!this.state
+                              .viewProfile && 'hidden'}`}
+                           tabIndex={-1}
+                        >
+                           <div className="settings_item">내 프로필</div>
+                           <div className="settings_item">새 글 작성</div>
+                           <div className="settings_item">임시 글</div>
+                           <div className="settings_item">설정</div>
+                           <GoogleLogout
+                              className="GoogleLogout"
+                              buttonText="로그아웃"
+                              onLogoutSuccess={this.googleLogout}
+                           />
+                        </div>
                      </div>
-                  </div>
+                  )}
                </div>
             )}
          </div>

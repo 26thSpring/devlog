@@ -15,6 +15,7 @@ const WriterHead = ({ onTitleChange }) => {
             className="WriterHead__title"
             type="text"
             placeholder="제목을 입력하세요"
+            autoComplete="off"
             onChange={e => {
                onTitleChange(e.target.value);
             }}

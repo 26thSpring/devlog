@@ -41,6 +41,37 @@ class Trending extends Component {
                   <div className="TrendingPosts">
                      {this.state.isData &&
                         this.posts.map((post, index) => post)}
+                     <Post
+                        data={{ title: '테스트용', content: '테스트내용' }}
+                        name="ChanUk Park"
+                     />
+                     <Post
+                        data={{ title: '테스트용', content: '테스트내용' }}
+                        name="ChanUk Park"
+                     />
+                     <Post
+                        data={{ title: '테스트용', content: '테스트내용' }}
+                        name="ChanUk Park"
+                     />
+                     <Post
+                        data={{
+                           title: '테스트용',
+                           content: '테스트내용'
+                        }}
+                        name="ChanUk Park"
+                     />
+                     <Post
+                        data={{ title: '테스트용', content: '테스트내용' }}
+                        name="ChanUk Park"
+                     />
+                     <Post
+                        data={{ title: '테스트용', content: '테스트내용' }}
+                        name="ChanUk Park"
+                     />
+                     <Post
+                        data={{ title: '테스트용', content: '테스트내용' }}
+                        name="ChanUk Park"
+                     />
                   </div>
                </div>
             </div>
