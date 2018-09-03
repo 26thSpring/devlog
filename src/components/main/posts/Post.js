@@ -11,14 +11,26 @@ class Post extends Component {
             <div className="Post_top">
                <Link className="Post__thumbnail" to="/">
                   <div className="whiteSpace" />
-                  <img src={defaultThumbnailImage} alt="defaulThumnail" />
+                  <img
+                     className={
+                        this.props.data.thumnail && 'Post__thumbnail__img'
+                     }
+                     src={
+                        this.props.data.thumnail
+                           ? `http://localhost:3002/${
+                              this.props.data.thumnail.split('\\')[2]
+                           }`
+                           : defaultThumbnailImage
+                     }
+                     alt="thumnail"
+                  />
                </Link>
             </div>
             <div className="Post__wrapper">
                <div className="Post__head">
-                  <span className="Post__head__name">스물여섯번째 봄</span>
+                  <span className="Post__head__name">{this.props.name}</span>
                   <Link className="Post__head__title" to="/">
-                     <span>노토 산스 코리아 / Apple SD Gothic Neo</span>
+                     <span>{this.props.data.title}</span>
                   </Link>
                   <span className="Post__head__regdate">
                      1일 전 · 2개의 댓글
@@ -32,9 +44,7 @@ class Post extends Component {
                   </Link>
                </div>
                <div className="Post__content">
-                  <span>
-                     사람인 ok 잡코리아 ok 인크루트 ok 게임잡 ok 로켓펀치 ok
-                  </span>
+                  <span>{this.props.data.content}</span>
                </div>
             </div>
          </div>

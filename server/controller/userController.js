@@ -50,12 +50,28 @@ exports.get = async ctx => {
    ctx.body = user;
 };
 
+exports.postList = async ctx => {
+   let user;
+
+   try {
+      // 데이터 조회
+      user = await User.findOne({ email: ctx.params.email });
+   } catch (err) {
+      return ctx.throw(500, err);
+   }
+
+   ctx.body = user;
+};
+
 exports.postUpdate = async ctx => {
    const { email } = ctx.params;
    console.log(email);
 
-   const { title, content, thumnail } = ctx.request.body;
-   let user;
+   const { title, content } = ctx.request.body;
+   const thumnail =
+      ctx.request.files.thumnail.name === ''
+         ? null
+         : ctx.request.files.thumnail.path;
 
    try {
       await User.findOneAndUpdate(

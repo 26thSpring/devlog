@@ -24,6 +24,7 @@ class PostWriter extends Component {
             action={`http://localhost:3002/api/posts/${sessionStorage.getItem(
                'loginUser'
             )}`}
+            encType="multipart/form-data"
          >
             <WriterHead onTitleChange={this.onTitleChange} />
             <div className="PostWriterSection">
