@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './PostViewMain.scss';
 import defaultProfileImage from 'img/defaultProfileImage.svg';
+import emptyHeart from 'img/postView/emptyHeart.svg';
+import fillHeart from 'img/postView/fillHeart.svg';
 
 class PostViewMain extends Component {
    render() {
@@ -18,7 +20,18 @@ class PostViewMain extends Component {
                   </div>
                </div>
             </div>
-            <div className="PostViewMain__title">devlog 테스트 버전 1.98</div>
+            <div className="PostViewMain__head">
+               <span className="PostViewMain__head__title">
+                  devlog 테스트 버전 1.98
+               </span>
+               <div className="flex">
+                  <div className="PostViewMain__head__regdate">2일 전</div>
+                  <span className="PostViewMain__head__like">
+                     <img className="heartIcon" src={fillHeart} alt="" />
+                     <span>3</span>
+                  </span>
+               </div>
+            </div>
             <div className="PostViewMain__content">
                <h2>9/04 작업내용</h2>
                1.

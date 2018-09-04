@@ -10,8 +10,8 @@ class PostView extends Component {
    render() {
       return (
          <div className="PostViewTemplate">
+            <PostViewHeader />
             <div className="PostViewSection">
-               <PostViewHeader />
                <PostViewMain />
                <PostViewFooter />
             </div>
