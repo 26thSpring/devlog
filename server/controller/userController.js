@@ -76,7 +76,11 @@ exports.postUpdate = async ctx => {
    try {
       await User.findOneAndUpdate(
          { email },
-         { $push: { posts: { title, content, thumnail } } }
+         {
+            $push: {
+               posts: { $each: [{ title, content, thumnail }], $sort: -1 }
+            }
+         }
       );
    } catch (err) {
       return ctx.throw(500, err);

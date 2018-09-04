@@ -56,12 +56,13 @@
 }
 .Post__head {
   display: flex;
-  height: 9rem;
+  height: 8rem;
   flex-direction: column;
   padding-top: 1.5rem;
-  padding-left: 1.3rem;
-  padding-right: 1.3rem;
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
   background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .Post__head__profile {
   position: absolute;
@@ -102,6 +103,5 @@
 .Post__head__regdate {
   color: rgba(0, 0, 0, 0.7);
   font-size: 0.9rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 1.3rem;
 }

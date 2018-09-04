@@ -18,7 +18,7 @@ const Writer = ({ onContentChange }) => {
             }}
          />
          <div className="writeFormArea__footer">
-            <input type="file" name="thumnail" id="upload_thumnail" />
+            <input type="file" name="images" id="upload_thumnail" />
             <label
                className="writeFormArea__footer__btnUpload"
                for="upload_thumnail"
