@@ -88,3 +88,12 @@ exports.postUpdate = async ctx => {
 
    ctx.redirect('http://localhost:3001');
 };
+
+exports.imageUpload = async ctx => {
+   console.log(`파일!!!${ctx.request.files.images.path}`);
+   const image = ctx.request.files.images;
+
+   ctx.body = `
+      <img src="http://localhost:3002/${image.path}" alt="${image.name}" />
+   `;
+};

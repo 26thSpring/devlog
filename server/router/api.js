@@ -52,6 +52,10 @@ router.get('/api/posts/:email', userCtlr.postList);
 
 router.post('/api/posts/:email', userCtlr.postUpdate);
 
+router.post('/api/posts', userCtlr.imageUpload);
+
+router.put('/api/posts/:email', userCtlr.imageUpload);
+
 app.use(router.routes());
 app.use(router.allowedMethods());
 
