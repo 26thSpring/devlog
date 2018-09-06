@@ -70,7 +70,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "concurrently --kill-others \"npm build\" \"node server/router/api.js\" \"node server/index.js\"",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "server": "concurrently --kill-others \"node server/router/api.js\" \"node server/index.js\""
