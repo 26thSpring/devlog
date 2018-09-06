@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = new Koa();
 
-// const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 
 const indexHTML = fs.readFileSync(
    path.resolve(__dirname, '../build/index.html'),
@@ -17,4 +17,4 @@ app.use(ctx => {
    ctx.body = indexHTML;
 });
 
-app.listen(3001, () => console.log('Server Listening on PORT 3001'));
+app.listen(port, () => console.log(`Server Listening on PORT ${port}`));
