@@ -21,7 +21,7 @@ class PostWriter extends Component {
          <form
             className="PostWriterTemplate"
             method="POST"
-            action={`http://127.0.0.1:3002/api/posts/${sessionStorage.getItem(
+            action={`https://api-devlog.herokuapp.com/api/posts/${sessionStorage.getItem(
                'loginUser'
             )}`}
             encType="multipart/form-data"
