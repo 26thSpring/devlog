@@ -9,7 +9,7 @@ class Writer extends Component {
       formData.append('images', file);
 
       console.log(formData.get('images'));
-      fetch('http://127.0.0.1:3002/api/posts', {
+      fetch('https://api-devlog.herokuapp.com/api/posts', {
          method: 'POST',
          encType: 'multipart/form-data',
          body: formData
