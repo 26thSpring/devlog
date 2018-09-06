@@ -35,7 +35,7 @@ app.use(json());
 app.use(cors());
 
 const mongoUrl =
-   'mongodb://foelsk56@gmail.com:cksdnr123!@devlog-shard-00-00-jyyxp.mongodb.net:27017,devlog-shard-00-01-jyyxp.mongodb.net:27017,devlog-shard-00-02-jyyxp.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
+   'mongodb://ook:cksdnr112!@devlog-shard-00-00-jyyxp.mongodb.net:27017,devlog-shard-00-01-jyyxp.mongodb.net:27017,devlog-shard-00-02-jyyxp.mongodb.net:27017/test?ssl=true&replicaSet=devlog-shard-0&authSource=admin&retryWrites=true';
 
 mongoose
    .connect(
