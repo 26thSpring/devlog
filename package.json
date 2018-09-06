@@ -124,5 +124,11 @@
   "devDependencies": {
     "cross-env": "^5.2.0",
     "prettier-eslint": "^8.8.2"
+  },
+  "proxy": {
+    "/api/*": {
+      "target": "https://localhost:3002",
+      "secure": false
+    }
   }
 }
