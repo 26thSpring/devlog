@@ -40,7 +40,7 @@ class Recent extends Component {
                   <div className="RecentPosts">
                      {this.state.isData &&
                         this.posts.map((post, index) => post)}
-                     <Post
+                     {/* <Post
                         data={{ title: '테스트용', content: '테스트내용' }}
                         name="ChanUk Park"
                      />
@@ -67,7 +67,7 @@ class Recent extends Component {
                      <Post
                         data={{ title: '테스트용', content: '테스트내용' }}
                         name="ChanUk Park"
-                     />
+                     /> */}
                   </div>
                </div>
             </div>

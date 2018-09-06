@@ -59,4 +59,4 @@ router.put('/api/posts/:email', userCtlr.imageUpload);
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-app.listen(3002, () => console.log('This on 3002'));
+app.listen(3002, () => console.log('API on 3002'));
