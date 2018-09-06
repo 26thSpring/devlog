@@ -46,7 +46,7 @@ class Recent extends Component {
                      />
                      <Post
                         data={{ title: '테스트용', content: '테스트내용' }}
-                        name="ChanUk Park"
+                        name="ChanUk Park2"
                      />
                      <Post
                         data={{ title: '테스트용', content: '테스트내용' }}
