@@ -34,9 +34,12 @@ app.use(
 app.use(json());
 app.use(cors());
 
+const mongoUrl =
+   'mongodb://foelsk56@gmail.com:cksdnr123!@devlog-shard-00-00-jyyxp.mongodb.net:27017,devlog-shard-00-01-jyyxp.mongodb.net:27017,devlog-shard-00-02-jyyxp.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
+
 mongoose
    .connect(
-      'mongodb://localhost/devlog',
+      mongoUrl,
       { useNewUrlParser: true }
    )
    .then(() => console.log('몽고DB 연결 성공'))
