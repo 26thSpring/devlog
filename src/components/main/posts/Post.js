@@ -18,7 +18,7 @@ class Post extends Component {
                      }
                      src={
                         this.props.data.thumnail
-                           ? `http://localhost:3002/${
+                           ? `https://api-devlog.herokuapp.com/${
                               this.props.data.thumnail.split('\\')[2]
                            }`
                            : defaultThumbnailImage
