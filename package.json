@@ -72,6 +72,7 @@
   "scripts": {
     "start": "concurrently --kill-others \"node server/router/api.js\" \"node server/index.js\"",
     "build": "node scripts/build.js",
+    "dev": "node scripts/start.js",
     "test": "node scripts/test.js --env=jsdom",
     "heroku-postbuild": "node scripts/build.js",
     "server": "concurrently --kill-others \"node server/router/api.js\" \"node server/index.js\""

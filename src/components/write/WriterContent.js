@@ -9,7 +9,7 @@ class Writer extends Component {
       formData.append('images', file);
 
       console.log(formData.get('images'));
-      fetch('http://localhost:3002/api/posts', {
+      fetch('http://127.0.0.1:3002/api/posts', {
          method: 'POST',
          encType: 'multipart/form-data',
          body: formData

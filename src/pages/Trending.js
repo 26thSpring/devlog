@@ -12,7 +12,7 @@ class Trending extends Component {
       this._callApi();
    }
    _callApi() {
-      this.posts = fetch(`http://localhost:3002/api/posts/${LOGIN_ID}`)
+      this.posts = fetch(`http://127.0.0.1:3002/api/posts/${LOGIN_ID}`)
          .then(res => res.json())
          .then(
             json =>

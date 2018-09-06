@@ -12,7 +12,7 @@ class Recent extends Component {
       this._callApi();
    }
    _callApi() {
-      fetch(`http://localhost:3002/api/posts/${LOGIN_ID}`)
+      fetch(`http://127.0.0.1:3002/api/posts/${LOGIN_ID}`)
          .then(res => res.json())
          .then(
             json =>
