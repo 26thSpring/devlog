@@ -29,4 +29,9 @@
   font-size: 1.3rem;
   font-weight: 400;
   word-break: break-word;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
 }

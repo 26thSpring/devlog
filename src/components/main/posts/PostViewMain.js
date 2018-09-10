@@ -66,6 +66,7 @@ class PostViewMain extends Component {
                <br />
                프로필 설정 페이지 작업
                <br />
+               리덕스 공부 마무리, 리덕스 적용
                <br />
                <br />
                <br />

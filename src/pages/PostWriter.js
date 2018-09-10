@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './PostWriter.scss';
-import { WriterHead, WriterContent, Preview } from 'components/index.async';
+import PostWriterContainer from 'containers/PostWriterContainer';
 
 class PostWriter extends Component {
    state = {};
@@ -26,11 +26,13 @@ class PostWriter extends Component {
             )}`}
             encType="multipart/form-data"
          >
-            <WriterHead onTitleChange={this.onTitleChange} />
+            <PostWriterContainer />
+
+            {/* <WriterHead onTitleChange={this.onTitleChange} />
             <div className="PostWriterSection">
                <WriterContent onContentChange={this.onContentChange} />
                <Preview title={this.state.title} content={this.state.content} />
-            </div>
+            </div> */}
          </form>
       );
    }

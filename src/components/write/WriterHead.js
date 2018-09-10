@@ -27,9 +27,7 @@ class WriterHead extends Component {
                   type="text"
                   placeholder="제목을 입력하세요"
                   autoComplete="off"
-                  onChange={e => {
-                     this.props.onTitleChange(e.target.value);
-                  }}
+                  onChange={this.props.onTitleChange}
                />
                <div className="WriterHead__buttons">
                   <Link to="/" className="WriterHead__buttons__temporarySubmit">

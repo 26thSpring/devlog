@@ -15,30 +15,26 @@ class Writer extends Component {
          body: formData
       })
          .then(res => res.text())
-         .thin(text => console.log(text))
+         .then(text => console.log(text))
          .catch(err => console.log(err));
    };
    render() {
+      const { content } = this.props.preview.toJS();
       return (
          <div className="writeFormArea">
             <textarea
                name="content"
                className="writeFormArea__content"
                placeholder="당신의 이야기를 적어주세요"
-               onChange={e => {
-                  const newVal = e.target.value
-                     .split('\n')
-                     .map(line => line)
-                     .join('<br/>');
-                  this.props.onContentChange(newVal);
-               }}
+               onChange={this.props.onContentChange}
+               value={content}
             />
             <div className="writeFormArea__footer">
                <input
                   type="file"
                   name="images"
                   id="upload_thumnail"
-                  onChange={this._asyncImageUpload.bind(this)}
+                  onChange={this.props.onImageUpload}
                />
                <label
                   className="writeFormArea__footer__btnUpload"

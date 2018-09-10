@@ -1,7 +1,8 @@
 import React from 'react';
 import './Preview.scss';
 
-const Preview = ({ title, content }) => {
+const Preview = ({ preview }) => {
+   const { title, content } = preview.toJS();
    return (
       <div className="previewArea">
          <div className="previewArea__title">{title}</div>
