@@ -26,8 +26,8 @@ class Writer extends Component {
                name="content"
                className="writeFormArea__content"
                placeholder="당신의 이야기를 적어주세요"
-               onChange={this.props.onContentChange}
-               value={content}
+               //onChange={this.props.onContentChange}
+               onInput={this.props.onContentChange}
             />
             <div className="writeFormArea__footer">
                <input

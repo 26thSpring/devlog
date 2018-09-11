@@ -20,11 +20,11 @@
   // box-shadow: 0 0 3px rgba(0, 0, 0, 0.04);
 }
 .profileImageWrap {
-  flex: 0 0 3.7rem;
+  flex: 0 0 3.9rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3.7rem;
+  height: 3.9rem;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
 }
@@ -32,7 +32,7 @@
   flex: 1 0 0;
   display: flex;
   flex-direction: column;
-  margin-left: 0.7rem;
+  margin-left: 0.8rem;
 }
 .profileName {
   margin-bottom: 0.15rem;
@@ -50,7 +50,7 @@
   border-bottom: 1px solid rgba(0, 0, 50, 0.13);
 }
 .PostViewMain__head__title {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-weight: 500;
 }
 .PostViewMain__head__regdate {
@@ -84,7 +84,8 @@
   margin-top: 1.5rem;
   margin-left: 1rem;
   margin-right: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.42rem;
+  font-weight: 200;
 }
 
 .flex {

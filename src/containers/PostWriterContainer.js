@@ -11,8 +11,7 @@ class PostWriterContainer extends Component {
       PostWriterActions.changeTitle(e.target.value);
    };
    handleContentChange = e => {
-      console.log(e.target);
-      const newVal = e.target.innerHTML
+      const newVal = e.target.value
          .split('\n')
          .map(line => line)
          .join('<br/>');
@@ -26,12 +25,14 @@ class PostWriterContainer extends Component {
 
       const reader = new FileReader();
       reader.onload = () => {
-         const image = `<img src="${reader.result}" />`;
+         const image = `<div style="width:70%;"><img src="${
+            reader.result
+         }" /></div>`;
          PostWriterActions.previewImage(image);
       };
       if (e.target.files[0]) {
          reader.readAsDataURL(e.target.files[0]);
-         PostWriterActions.writerImage(e.target.files[0]);
+         PostWriterActions.writerImage(e.target.files[0].name);
       }
 
       //PostWriterActions.clearImage('');
@@ -50,18 +51,32 @@ class PostWriterContainer extends Component {
       //      .then(text => PostWriterActions.uploadImage(text))
       //      .catch(err => console.log(err));
    };
+   handleActiveOn = async e => {
+      const { PostWriterActions } = this.props;
+      PostWriterActions.activeSubmit(true);
+   };
+   handleActiveOff = async e => {
+      const { PostWriterActions } = this.props;
+      PostWriterActions.hideSubmit(false);
+   };
 
    render() {
       const {
          handleTitleChange,
          handleContentChange,
-         handleImageUpload
+         handleImageUpload,
+         handleActiveOn,
+         handleActiveOff
       } = this;
-      const { image, preview } = this.props;
-
+      const { image, preview, active } = this.props;
       return (
          <Fragment>
-            <WriterHead onTitleChange={handleTitleChange} />
+            <WriterHead
+               onTitleChange={handleTitleChange}
+               handleActiveOn={handleActiveOn}
+               handleActiveOff={handleActiveOff}
+               active={active}
+            />
             <div className="PostWriterSection">
                <WriterContent
                   onContentChange={handleContentChange}
@@ -79,7 +94,8 @@ export default connect(
    ({ postWriter }) => ({
       // immutable 을 사용하니, 값을 조회 할 때는 .get 을 사용
       image: postWriter.get('image'),
-      preview: postWriter.get('preview')
+      preview: postWriter.get('preview'),
+      active: postWriter.get('active')
    }),
    dispatch => ({
       PostWriterActions: bindActionCreators(postWriterActions, dispatch)

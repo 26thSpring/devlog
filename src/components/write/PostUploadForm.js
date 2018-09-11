@@ -3,9 +3,20 @@ import './PostUploadForm.scss';
 import thumnailUpload from 'img/writer/thumnailUpload.svg';
 
 class PostUploadForm extends Component {
+   constructor() {
+      super();
+   }
+   componentDidMount() {
+      document.getElementsByTagName(
+         'body'
+      )[0].onclick = this.props.handleActiveOff;
+   }
    render() {
       return (
-         <div className={`PostUploadTemplate ${this.props.active && 'active'}`}>
+         <div
+            onClick={this.props.handleActiveOn}
+            className={`PostUploadTemplate ${this.props.active && 'active'}`}
+         >
             <div className="PostUploadContent">
                <div className="header">새 글 작성하기</div>
                <div className="section">

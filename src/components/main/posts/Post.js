@@ -7,10 +7,14 @@ import LinesEllipsis from 'react-lines-ellipsis';
 
 class Post extends Component {
    render() {
+      console.log(this.props.data);
       return (
          <div className="Post">
             <div className="Post_top">
-               <Link className="Post__thumbnail" to="/">
+               <Link
+                  className="Post__thumbnail"
+                  to={`post/${this.props.name}/${this.props.data._id}`}
+               >
                   <div className="whiteSpace" />
                   <img
                      className={
@@ -30,7 +34,10 @@ class Post extends Component {
             <div className="Post__wrapper">
                <div className="Post__head">
                   <span className="Post__head__name">{this.props.name}</span>
-                  <Link className="Post__head__title" to="/">
+                  <Link
+                     className="Post__head__title"
+                     to={`post/${this.props.name}/${this.props.data._id}`}
+                  >
                      <LinesEllipsis
                         text={this.props.data.title}
                         maxLine="1"

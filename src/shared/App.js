@@ -19,7 +19,7 @@ class App extends Component {
          <div className="App">
             <Switch>
                <Route path="/WritePost" component={PostWriter} />
-               <Route path="/Post/:post_id" component={PostView} />
+               <Route path="/post/:name/:post_id" component={PostView} />
                <Fragment>
                   <Header />
                   <Main />

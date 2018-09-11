@@ -6,14 +6,6 @@ import utils from 'img/writer/utilsBtn.svg';
 import { PostUploadForm } from 'components/index.async';
 
 class WriterHead extends Component {
-   state = {
-      active: false
-   };
-   handleClick = () => {
-      this.setState({
-         active: true
-      });
-   };
    render() {
       return (
          <Fragment>
@@ -35,7 +27,7 @@ class WriterHead extends Component {
                   </Link>
                   <div
                      className="WriterHead__buttons__submit"
-                     onClick={this.handleClick.bind(this)}
+                     onClick={this.props.handleActiveOn}
                   >
                      작성하기
                   </div>
@@ -44,7 +36,11 @@ class WriterHead extends Component {
                   </div>
                </div>
             </div>
-            <PostUploadForm active={this.state.active} />
+            <PostUploadForm
+               handleActiveOn={this.props.handleActiveOn}
+               handleActiveOff={this.props.handleActiveOff}
+               active={this.props.active}
+            />
          </Fragment>
       );
    }
