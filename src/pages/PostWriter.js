@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './PostWriter.scss';
-import PostWriterContainer from 'containers/PostWriterContainer';
+import { PostWriterContainer } from 'containers/index.async';
 
 class PostWriter extends Component {
    state = {};

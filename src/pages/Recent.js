@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from 'components/main/posts/Post';
+import { Post } from 'components/index.async';
 import './Recent.scss';
 
 const LOGIN_ID = sessionStorage.getItem('loginUser');

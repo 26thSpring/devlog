@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
 import './PostView.scss';
-import {
-   PostViewHeader,
-   PostViewMain,
-   PostViewFooter
-} from 'components/index.async';
+import { PostViewContainer } from 'containers/index.async';
 
 class PostView extends Component {
    render() {
-      return (
-         <div className="PostViewTemplate">
-            <PostViewHeader />
-            <div className="PostViewSection">
-               <PostViewMain />
-               <PostViewFooter />
-            </div>
-         </div>
-      );
+      const { post_id } = this.props.match.params;
+      return <PostViewContainer post_id={post_id} />;
    }
 }
 

@@ -6,7 +6,7 @@ class HeaderTitle extends Component {
    render() {
       return (
          <div className="HeaderTitle">
-            <Link to="/api/users">devlog</Link>
+            <Link to="/">devlog</Link>
          </div>
       );
    }

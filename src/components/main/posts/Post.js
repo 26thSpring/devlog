@@ -7,7 +7,6 @@ import LinesEllipsis from 'react-lines-ellipsis';
 
 class Post extends Component {
    render() {
-      console.log(this.props.data);
       return (
          <div className="Post">
             <div className="Post_top">

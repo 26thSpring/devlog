@@ -6,6 +6,8 @@ import fillHeart from 'img/postView/fillHeart.svg';
 
 class PostViewMain extends Component {
    render() {
+      const data = this.props.data.toJS();
+      console.log(data);
       return (
          <div className="PostViewMain">
             <div className="PostViewMain__writer">
@@ -22,18 +24,25 @@ class PostViewMain extends Component {
             </div>
             <div className="PostViewMain__head">
                <span className="PostViewMain__head__title">
-                  devlog 테스트 버전 1.98
+                  {data.title}
+                  {/* devlog 테스트 버전 1.98 */}
                </span>
                <div className="flex">
-                  <div className="PostViewMain__head__regdate">2일 전</div>
+                  <div className="PostViewMain__head__regdate">
+                     {data.regdate}
+                     {/* 2일 전 */}
+                  </div>
                   <span className="PostViewMain__head__like">
                      <img className="heartIcon" src={fillHeart} alt="" />
                      <span>3</span>
                   </span>
                </div>
             </div>
-            <div className="PostViewMain__content">
-               <h2>9/04 작업내용</h2>
+            <div
+               className="PostViewMain__content"
+               dangerouslySetInnerHTML={{ __html: data.content }}
+            >
+               {/* <h2>9/04 작업내용</h2>
                1.
                <br />
                포스트 목록 가져올 때 정렬 안되던 문제 해결
@@ -71,7 +80,7 @@ class PostViewMain extends Component {
                <br />
                <br />
                <br />
-               <br />
+               <br /> */}
             </div>
          </div>
       );
