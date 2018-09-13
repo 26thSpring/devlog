@@ -7,7 +7,12 @@ import fillHeart from 'img/postView/fillHeart.svg';
 class PostViewMain extends Component {
    render() {
       const data = this.props.data.toJS();
+      const content = data.content
+         .split('\n')
+         .map(line => line)
+         .join('<br/>');
       console.log(data);
+
       return (
          <div className="PostViewMain">
             <div className="PostViewMain__writer">
@@ -40,7 +45,7 @@ class PostViewMain extends Component {
             </div>
             <div
                className="PostViewMain__content"
-               dangerouslySetInnerHTML={{ __html: data.content }}
+               dangerouslySetInnerHTML={{ __html: content }}
             >
                {/* <h2>9/04 작업내용</h2>
                1.

@@ -8,7 +8,7 @@ import profileImage from 'img/defaultProfileImage.svg';
 class MainHead extends Component {
    constructor() {
       super();
-      sessionStorage.setItem('loginUser', 'foelsk56@gmail.com');
+      //sessionStorage.setItem('loginUser', 'foelsk56@gmail.com');
    }
    componentDidMount() {
       !sessionStorage.getItem('loginUser')
@@ -27,6 +27,7 @@ class MainHead extends Component {
          name: response.profileObj.name,
          profileImage: response.profileObj.imageUrl
       });
+
       sessionStorage.setItem('loginUser', response.profileObj.email);
    };
    googleLogout = () => {
@@ -39,7 +40,6 @@ class MainHead extends Component {
    };
    handleClick = () => {
       this.setState({ viewProfile: !this.state.viewProfile });
-      //this.profileMenu.focus();
    };
    render() {
       return (
