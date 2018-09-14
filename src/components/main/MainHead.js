@@ -50,7 +50,7 @@ class MainHead extends Component {
             {!this.state.login ? (
                <GoogleLogin
                   className="GoogleLogin"
-                  clientId="725851416084-g4n4t67kgo93hu9ccmlt7314hretdvom.apps.googleusercontent.com"
+                  clientId="258535519525-703qujqlaq80t3k4bbqkre5pqftghsmm.apps.googleusercontent.com"
                   buttonText="구글 계정으로 로그인"
                   onSuccess={this.responseGoogle}
                   onFailure={this.responseGoogle}
