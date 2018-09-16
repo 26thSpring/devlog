@@ -22,7 +22,8 @@ class MainHead extends Component {
    };
    responseGoogle = response => {
       console.log(response);
-      //if(response)
+      if (response) {
+      }
       this.setState({
          login: true,
          name: response.profileObj.name,
