@@ -22,6 +22,7 @@ class MainHead extends Component {
    };
    responseGoogle = response => {
       console.log(response);
+      //if(response)
       this.setState({
          login: true,
          name: response.profileObj.name,
@@ -38,7 +39,7 @@ class MainHead extends Component {
       });
       sessionStorage.removeItem('loginUser');
    };
-   handleClick = () => {
+   handleProfileClick = () => {
       this.setState({ viewProfile: !this.state.viewProfile });
    };
    render() {
@@ -59,7 +60,7 @@ class MainHead extends Component {
                <div className="MainHead__profile">
                   <img
                      className="MainHead__profile__thumnail"
-                     onClick={this.handleClick.bind(this)}
+                     onClick={this.handleProfileClick.bind(this)}
                      src={this.state.profileImage}
                      alt="aaa"
                   />
