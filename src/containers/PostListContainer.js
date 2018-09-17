@@ -11,27 +11,30 @@ class PostListContainer extends Component {
       this.fetchData();
    }
    fetchData = async e => {
-      console.log(this.props);
       const { PostListActions } = this.props;
       fetch(`https://api-devlog.herokuapp.com/api/posts/${LOGIN_ID}`)
          .then(res => res.json())
-         .then(json => PostListActions.fetchData(json));
+         .then(json => {
+            PostListActions.fetchData(json);
+            PostListActions.toggleData(true);
+         })
+         .catch(err => console.log(err));
    };
 
    render() {
       const { isData, data } = this.props;
       //console.log(data.toJS());
-      return (
-         isData &&
-         data.posts.map((post, index) => (
-            <Post data={data.posts} name={data.nickname} key={data.posts._id} />
+      return isData
+         ? data.posts.map((post, index) => (
+            <Post data={post} profile={data.profile} key={post._id} />
          ))
-      );
+         : '로딩중...';
    }
 }
 
 export default connect(
    ({ postList }) => ({
+      isData: postList.get('isData'),
       data: postList.get('data')
    }),
    dispatch => ({

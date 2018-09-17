@@ -3,9 +3,6 @@ import './PostUploadForm.scss';
 import thumnailUpload from 'img/writer/thumnailUpload.svg';
 
 class PostUploadForm extends Component {
-   constructor() {
-      super();
-   }
    componentDidMount() {
       document.getElementsByTagName(
          'body'

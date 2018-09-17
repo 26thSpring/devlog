@@ -1,4 +1,9 @@
 .Main {
   flex: 1;
   overflow-y: scroll;
+  margin-left: 15rem;
+
+  @media (max-width: 1020px) {
+    margin-left: 0;
+  }
 }

@@ -1,9 +1,11 @@
 .Header {
+  position: fixed;
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
   width: 15rem;
   height: 100%;
+  left: 0;
   background-color: white;
 
   @media (max-width: 1020px) {

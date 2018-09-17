@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Post } from 'components/index.async';
+import { PostListContainer } from 'containers/index.async';
 import './Recent.scss';
 
 const LOGIN_ID = sessionStorage.getItem('loginUser');
@@ -38,36 +39,7 @@ class Recent extends Component {
             <div className="RecentSection">
                <div className="contents">
                   <div className="RecentPosts">
-                     {this.state.isData &&
-                        this.posts.map((post, index) => post)}
-                     {/* <Post
-                        data={{ title: '테스트용', content: '테스트내용' }}
-                        name="ChanUk Park"
-                     />
-                     <Post
-                        data={{ title: '테스트용', content: '테스트내용' }}
-                        name="ChanUk Park2"
-                     />
-                     <Post
-                        data={{ title: '테스트용', content: '테스트내용' }}
-                        name="ChanUk Park"
-                     />
-                     <Post
-                        data={{ title: '테스트용', content: '테스트내용' }}
-                        name="ChanUk Park"
-                     />
-                     <Post
-                        data={{ title: '테스트용', content: '테스트내용' }}
-                        name="ChanUk Park"
-                     />
-                     <Post
-                        data={{ title: '테스트용', content: '테스트내용' }}
-                        name="ChanUk Park"
-                     />
-                     <Post
-                        data={{ title: '테스트용', content: '테스트내용' }}
-                        name="ChanUk Park"
-                     /> */}
+                     <PostListContainer />
                   </div>
                </div>
             </div>

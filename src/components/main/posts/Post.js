@@ -12,7 +12,9 @@ class Post extends Component {
             <div className="Post_top">
                <Link
                   className="Post__thumbnail"
-                  to={`post/${this.props.name}/${this.props.data._id}`}
+                  to={`post/${this.props.profile.nickname}/${
+                     this.props.data._id
+                  }`}
                >
                   <div className="whiteSpace" />
                   <img
@@ -32,26 +34,31 @@ class Post extends Component {
             </div>
             <div className="Post__wrapper">
                <div className="Post__head">
-                  <span className="Post__head__name">{this.props.name}</span>
-                  <Link
-                     className="Post__head__title"
-                     to={`post/${this.props.name}/${this.props.data._id}`}
-                  >
-                     <LinesEllipsis
-                        text={this.props.data.title}
-                        maxLine="1"
-                        ellipsis=".."
-                        trimRight
-                        basedOn="letters"
-                     />
-                  </Link>
+                  <span className="Post__head__name">
+                     {this.props.profile.nickname}
+                  </span>
+                  <div className="Post__head__title">
+                     <Link
+                        to={`post/${this.props.name}/${this.props.data._id}`}
+                     >
+                        <LinesEllipsis
+                           text={this.props.data.title}
+                           maxLine="1"
+                           ellipsis=".."
+                           trimRight
+                           basedOn="letters"
+                           component="div"
+                        />
+                     </Link>
+                  </div>
                   <span className="Post__head__regdate">
                      1일 전 · 2개의 댓글
                   </span>
                   <Link className="Post__head__profile" to="/">
                      <img
                         className="profileWrapper"
-                        src={defaultProfileImage}
+                        //src={defaultProfileImage}
+                        src={this.props.profile.thumnail}
                         alt="defaultProfile"
                      />
                   </Link>
