@@ -6,3 +6,4 @@ export const Sort = asyncRoute(() => import('./Sort'));
 export const Tags = asyncRoute(() => import('./Tags'));
 export const PostWriter = asyncRoute(() => import('./PostWriter'));
 export const PostView = asyncRoute(() => import('./PostView'));
+export const Profile = asyncRoute(() => import('./Profile'));

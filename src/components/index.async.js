@@ -17,3 +17,5 @@ export const PostViewMain = asyncRoute(() =>
 export const PostViewFooter = asyncRoute(() =>
    import('./main/posts/PostViewFooter')
 );
+export const ProfileHead = asyncRoute(() => import('./profile/ProfileHead'));
+export const ProfileBody = asyncRoute(() => import('./profile/ProfileBody'));

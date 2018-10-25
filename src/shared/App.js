@@ -4,7 +4,7 @@ import './App.scss';
 import Header from 'components/header/Header';
 import Main from 'components/main/Main';
 import { hot } from 'react-hot-loader';
-import { PostWriter, PostView } from 'pages/index.async';
+import { PostWriter, PostView, Profile } from 'pages/index.async';
 
 class App extends Component {
    componentDidMount() {
@@ -18,6 +18,7 @@ class App extends Component {
       return (
          <div className="App">
             <Switch>
+               <Route path="/profile/@:username" component={Profile} />
                <Route path="/WritePost" component={PostWriter} />
                <Route path="/post/:name/:post_id" component={PostView} />
                <Fragment>

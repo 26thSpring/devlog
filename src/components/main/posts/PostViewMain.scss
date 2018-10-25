@@ -21,9 +21,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3.9rem;
+  min-height: 3.9rem;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
+
+  img {
+    max-width: 100%;
+  }
 }
 .profileSection {
   flex: 1 0 0;
@@ -78,7 +82,7 @@
 .PostViewMain__content {
   margin-top: 1.5rem;
   font-size: 1.42rem;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .flex {

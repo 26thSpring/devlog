@@ -9,3 +9,4 @@ export const PostViewContainer = asyncRoute(() =>
 export const PostListContainer = asyncRoute(() =>
    import('./PostListContainer')
 );
+export const ProfileContainer = asyncRoute(() => import('./ProfileContainer'));

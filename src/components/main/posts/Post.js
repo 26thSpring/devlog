@@ -7,24 +7,24 @@ import LinesEllipsis from 'react-lines-ellipsis';
 
 class Post extends Component {
    render() {
+      console.log(this.props);
+      const { _id, thumnail, title, content } = this.props.data;
+      const { nickname } = this.props.profile;
+      const profileImage = this.props.profile.thumnail;
       return (
          <div className="Post">
             <div className="Post_top">
                <Link
                   className="Post__thumbnail"
-                  to={`post/${this.props.profile.nickname}/${
-                     this.props.data._id
-                  }`}
+                  to={`post/${nickname}/${this.props.data._id}`}
                >
                   <div className="whiteSpace" />
                   <img
-                     className={
-                        this.props.data.thumnail && 'Post__thumbnail__img'
-                     }
+                     className={thumnail && 'Post__thumbnail__img'}
                      src={
-                        this.props.data.thumnail
+                        thumnail
                            ? `https://api-devlog.herokuapp.com/${
-                              this.props.data.thumnail.split('/')[2]
+                              thumnail.split('/')[2]
                            }`
                            : defaultThumbnailImage
                      }
@@ -34,15 +34,16 @@ class Post extends Component {
             </div>
             <div className="Post__wrapper">
                <div className="Post__head">
-                  <span className="Post__head__name">
-                     {this.props.profile.nickname}
-                  </span>
+                  <Link
+                     to={`/profile/@${nickname}`}
+                     className="Post__head__name"
+                  >
+                     {nickname}
+                  </Link>
                   <div className="Post__head__title">
-                     <Link
-                        to={`post/${this.props.name}/${this.props.data._id}`}
-                     >
+                     <Link to={`post/${this.props.name}/${_id}`}>
                         <LinesEllipsis
-                           text={this.props.data.title}
+                           text={title}
                            maxLine="1"
                            ellipsis=".."
                            trimRight
@@ -58,14 +59,14 @@ class Post extends Component {
                      <img
                         className="profileWrapper"
                         //src={defaultProfileImage}
-                        src={this.props.profile.thumnail}
+                        src={profileImage}
                         alt="defaultProfile"
                      />
                   </Link>
                </div>
                <div className="Post__content">
                   <LinesEllipsis
-                     text={this.props.data.content}
+                     text={content}
                      maxLine="3"
                      ellipsis=".."
                      trimRight
