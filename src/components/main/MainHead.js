@@ -8,10 +8,10 @@ import profileImage from 'img/defaultProfileImage.svg';
 class MainHead extends Component {
    constructor() {
       super();
-      //sessionStorage.setItem('loginUser', 'foelsk56@gmail.com');
+      //localStorage.setItem('devlog_user', 'foelsk56@gmail.com');
    }
    componentDidMount() {
-      !sessionStorage.getItem('loginUser')
+      !localStorage.getItem('devlog_user')
          ? this.setState({ login: false })
          : this.setState({ login: true });
    }
@@ -30,7 +30,7 @@ class MainHead extends Component {
          profileImage: response.profileObj.imageUrl
       });
 
-      sessionStorage.setItem('loginUser', response.profileObj.email);
+      localStorage.setItem('devlog_user', response.profileObj.email);
    };
    googleLogout = () => {
       console.log('googleLogout');
@@ -38,7 +38,7 @@ class MainHead extends Component {
          login: false,
          viewProfile: false
       });
-      sessionStorage.removeItem('loginUser');
+      localStorage.removeItem('devlog_user');
    };
    handleProfileClick = () => {
       this.setState({ viewProfile: !this.state.viewProfile });
@@ -46,7 +46,7 @@ class MainHead extends Component {
    render() {
       return (
          <div className="MainHead">
-            <Link to="/WritePost">
+            <Link to="/postwrite">
                <div className="btn_writePost">새 포스트 작성</div>
             </Link>
             {!this.state.login ? (
@@ -75,8 +75,15 @@ class MainHead extends Component {
                               .viewProfile && 'hidden'}`}
                            tabIndex={-1}
                         >
-                           <div className="settings_item">내 프로필</div>
-                           <div className="settings_item">새 글 작성</div>
+                           <Link
+                              to="/profile/@devlog"
+                              className="settings_item"
+                           >
+                              내 프로필
+                           </Link>
+                           <Link to="/postwrite" className="settings_item">
+                              새 글 작성
+                           </Link>
                            <div className="settings_item">임시 글</div>
                            <div className="settings_item">설정</div>
                            <GoogleLogout

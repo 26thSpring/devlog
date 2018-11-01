@@ -1,9 +1,15 @@
+@import "utils";
+
 .MainHead {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 1.75rem;
   margin-bottom: 0.2rem;
+
+  @include media("<small") {
+    padding: 0.875rem;
+  }
 }
 .btn_writePost {
   background-color: rgba(0, 30, 225, 0.8);

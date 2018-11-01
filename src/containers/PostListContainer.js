@@ -3,16 +3,17 @@ import { Post } from 'components/index.async';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as postListActions from 'store/modules/postList';
+require('dotenv').config();
 
-const LOGIN_ID = sessionStorage.getItem('loginUser');
+const LOGIN_ID = localStorage.getItem('devlog_user');
 
 class PostListContainer extends Component {
    componentDidMount() {
-      this.fetchData();
+      if (LOGIN_ID) this.fetchData();
    }
    fetchData = async e => {
       const { PostListActions } = this.props;
-      fetch(`https://api-devlog.herokuapp.com/api/posts/${LOGIN_ID}`)
+      fetch(`${process.env.REACT_APP_API_DOMAIN}/api/posts/${LOGIN_ID}`)
          .then(res => res.json())
          .then(json => {
             PostListActions.fetchData(json);
@@ -23,7 +24,8 @@ class PostListContainer extends Component {
 
    render() {
       const { isData, data } = this.props;
-      //console.log(data.toJS());
+      console.log('리덕스 컨테이너 데이터');
+      console.log(data);
       return isData
          ? data.posts.map((post, index) => (
             <Post data={post} profile={data.profile} key={post._id} />

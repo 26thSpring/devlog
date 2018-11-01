@@ -1,0 +1,12 @@
+@import "utils";
+
+.ProfileBody {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60rem;
+  margin-top: 2rem;
+
+  @include media("<small") {
+    width: 100%;
+  }
+}

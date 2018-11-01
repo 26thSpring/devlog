@@ -1,21 +1,35 @@
+@import "utils";
+
 .Post {
   position: relative;
   min-width: 15rem;
   margin: 0.875rem;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04);
 
-  @media (max-width: 2000px) {
+  @include media("<huge") {
     width: calc(25% - 1.75rem);
-    @media (max-width: 1700px) {
-      width: calc(33.3333% - 1.75rem);
-      @media (max-width: 1200px) {
-        width: calc(50% - 1.75rem);
-        @media (max-width: 1020px) {
-          width: 100%;
-        }
-      }
-    }
   }
+  @include media("<large") {
+    width: calc(33.3333% - 1.75rem);
+  }
+  @include media("<medium") {
+    width: calc(50% - 1.75rem);
+  }
+  @include media("<small") {
+    width: 100%;
+  }
+  // @media (max-width: 2000px) {
+  //   width: calc(25% - 1.75rem);
+  //   @media (max-width: 1700px) {
+  //     width: calc(33.3333% - 1.75rem);
+  //     @media (max-width: 1200px) {
+  //       width: calc(50% - 1.75rem);
+  //       @media (max-width: 1020px) {
+  //         width: 100%;
+  //       }
+  //     }
+  //   }
+  // }
 }
 .Post_top {
   position: relative;
@@ -34,6 +48,7 @@
   border-top-right-radius: 0.2rem;
 }
 .Post__thumbnail__img {
+  object-fit: cover;
   width: 100%;
   border-top-left-radius: 0.2rem;
   border-top-right-radius: 0.2rem;
@@ -42,8 +57,9 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 5;
   transition: all 0.25s ease;
+
   &:hover {
     background-color: rgba(255, 255, 255, 0.15);
   }
@@ -95,6 +111,7 @@
   padding-top: 1rem;
   padding-left: 1.3rem;
   padding-right: 1.3rem;
+  word-break: break-all;
 }
 .Post__head__name {
   color: rgba(150, 0, 255, 0.85);

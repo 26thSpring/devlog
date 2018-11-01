@@ -1,10 +1,11 @@
 import React from 'react';
 import './ProfileBody.scss';
+import PostListContainer from 'containers/PostListContainer';
 
 const ProfileBody = () => {
    return (
       <div className="ProfileBody">
-         <div>1</div>
+         <PostListContainer />
       </div>
    );
 };

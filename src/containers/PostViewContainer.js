@@ -19,7 +19,7 @@ class PostViewContainer extends Component {
       const { PostViewActions, post_id } = this.props;
       console.log(this.props.data.toJS());
       console.log(post_id);
-      fetch(`https://api-devlog.herokuapp.com/api/post/devlog/${post_id}`)
+      fetch(`${process.env.REACT_APP_API_DOMAIN}/api/post/devlog/${post_id}`)
          .then(res => res.json())
          .then(json => {
             console.log(json);

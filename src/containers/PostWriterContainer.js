@@ -70,7 +70,14 @@ class PostWriterContainer extends Component {
       } = this;
       const { image, preview, active } = this.props;
       return (
-         <Fragment>
+         <form
+            className="PostWriterTemplate"
+            method="POST"
+            action={`${
+               process.env.REACT_APP_API_DOMAIN
+            }/api/posts/${localStorage.getItem('devlog_user')}`}
+            encType="multipart/form-data"
+         >
             <WriterHead
                onTitleChange={handleTitleChange}
                handleActiveOn={handleActiveOn}
@@ -85,7 +92,7 @@ class PostWriterContainer extends Component {
                />
                <Preview preview={preview} />
             </div>
-         </Fragment>
+         </form>
       );
    }
 }

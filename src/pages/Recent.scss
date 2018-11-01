@@ -1,8 +1,14 @@
+@import "utils";
+
 .RecentTemplate {
   width: 100%;
   padding-left: 0.875rem;
   padding-right: 0.875rem;
   position: relative;
+
+  @include media("<small") {
+    padding: 0;
+  }
 }
 .RecentSection h2 {
   margin-left: 0.875rem;

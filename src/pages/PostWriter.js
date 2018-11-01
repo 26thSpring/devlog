@@ -17,24 +17,7 @@ class PostWriter extends Component {
       this.setState({ content });
    };
    render() {
-      return (
-         <form
-            className="PostWriterTemplate"
-            method="POST"
-            action={`https://api-devlog.herokuapp.com/api/posts/${sessionStorage.getItem(
-               'loginUser'
-            )}`}
-            encType="multipart/form-data"
-         >
-            <PostWriterContainer />
-
-            {/* <WriterHead onTitleChange={this.onTitleChange} />
-            <div className="PostWriterSection">
-               <WriterContent onContentChange={this.onContentChange} />
-               <Preview title={this.state.title} content={this.state.content} />
-            </div> */}
-         </form>
-      );
+      return <PostWriterContainer />;
    }
 }
 

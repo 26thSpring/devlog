@@ -6,6 +6,8 @@ import MainHead from './MainHead';
 
 class Main extends Component {
    render() {
+      console.log('환경변수');
+      console.log(process.env);
       return (
          <div className="Main">
             <MainHead />

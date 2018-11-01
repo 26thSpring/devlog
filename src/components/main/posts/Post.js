@@ -16,15 +16,15 @@ class Post extends Component {
             <div className="Post_top">
                <Link
                   className="Post__thumbnail"
-                  to={`post/${nickname}/${this.props.data._id}`}
+                  to={`/post/${nickname}/${_id}`}
                >
                   <div className="whiteSpace" />
                   <img
                      className={thumnail && 'Post__thumbnail__img'}
                      src={
                         thumnail
-                           ? `https://api-devlog.herokuapp.com/${
-                              thumnail.split('/')[2]
+                           ? `${process.env.REACT_APP_API_DOMAIN}/${
+                              thumnail.split('\\')[2]
                            }`
                            : defaultThumbnailImage
                      }
@@ -41,7 +41,7 @@ class Post extends Component {
                      {nickname}
                   </Link>
                   <div className="Post__head__title">
-                     <Link to={`post/${this.props.name}/${_id}`}>
+                     <Link to={`/post/${nickname}/${_id}`}>
                         <LinesEllipsis
                            text={title}
                            maxLine="1"
@@ -55,7 +55,10 @@ class Post extends Component {
                   <span className="Post__head__regdate">
                      1일 전 · 2개의 댓글
                   </span>
-                  <Link className="Post__head__profile" to="/">
+                  <Link
+                     className="Post__head__profile"
+                     to={`/profile/@${nickname}`}
+                  >
                      <img
                         className="profileWrapper"
                         //src={defaultProfileImage}
