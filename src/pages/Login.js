@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import './Login.scss';
+import { LoginHeader, LoginBody } from 'components/index.async';
 
 class Login extends Component {
    render() {
       return (
          <div className="LoginTemplate">
             <div className="LoginSection">
-               <div>로그인 페이지</div>
+               <LoginHeader />
+               <LoginBody />
             </div>
          </div>
       );

@@ -19,3 +19,5 @@ export const PostViewFooter = asyncRoute(() =>
 );
 export const ProfileHead = asyncRoute(() => import('./profile/ProfileHead'));
 export const ProfileBody = asyncRoute(() => import('./profile/ProfileBody'));
+export const LoginHeader = asyncRoute(() => import('./login/LoginHeader'));
+export const LoginBody = asyncRoute(() => import('./login/LoginBody'));

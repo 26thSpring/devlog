@@ -1,0 +1,18 @@
+.LoginBody {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.LoginBody_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+}
+.LoginBody_head {
+  font-size: 1.5rem;
+}
+.LoginBody_form {
+  font-size: 1.3rem;
+}

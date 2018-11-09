@@ -1,0 +1,57 @@
+@import "utils";
+
+.LoginHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $oc-indigo-8;
+  color: white;
+  padding-bottom: 5rem;
+
+  @include media("<huge") {
+    width: 60rem;
+  }
+  @include media("<large") {
+    width: 49rem;
+  }
+  @include media("<medium") {
+    width: 35rem;
+  }
+  @include media("<small") {
+    width: 100%;
+    padding: 2rem;
+  }
+}
+.LoginHeader_title {
+  font-family: "Inconsolata";
+  font-weight: 600;
+  margin-bottom: 1.3rem;
+
+  @include media("<huge") {
+    font-size: 3rem;
+  }
+  @include media("<large") {
+    font-size: 2.7rem;
+  }
+  @include media("<medium") {
+    font-size: 2.5rem;
+  }
+  @include media("<small") {
+    font-size: 2rem;
+  }
+}
+.LoginHeader_content {
+  @include media("<huge") {
+    font-size: 1.8rem;
+  }
+  @include media("<large") {
+    font-size: 1.6rem;
+  }
+  @include media("<medium") {
+    font-size: 1.4rem;
+  }
+  @include media("<small") {
+    font-size: 1.2rem;
+  }
+}
