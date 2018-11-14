@@ -1,12 +1,17 @@
+@import "utils";
+
 .previewArea {
   display: flex;
   flex-direction: column;
   flex: 1 0 0;
   padding: 1.5rem;
-  background-color: rgba(0, 0, 100, 0.05);
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include media("<small") {
     display: none;
   }
 }
@@ -14,19 +19,18 @@
   display: flex;
   align-items: center;
   flex: 0 0 auto;
-  font-weight: 600;
-  font-size: 3rem;
+  font-size: 3.3rem;
+  font-weight: 700;
   padding-left: 0.5rem;
   padding-bottom: 0.8rem;
-  color: rgba(0, 0, 60, 0.9);
   border-bottom: 1px solid rgba(0, 0, 100, 0.25);
   word-break: break-word;
 }
 .previewArea__content {
   flex: 1 0 auto;
   padding: 0.2rem;
-  padding-top: 1rem;
-  font-size: 1.3rem;
+  padding-top: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 400;
   word-break: break-word;
 

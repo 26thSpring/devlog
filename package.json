@@ -55,6 +55,7 @@
     "react-dom": "^16.4.2",
     "react-google-login": "^3.2.1",
     "react-hot-loader": "^4.0.0",
+    "react-icons": "^3.2.2",
     "react-lines-ellipsis": "^0.13.2",
     "react-motion": "^0.5.2",
     "react-redux": "^5.0.7",
@@ -73,12 +74,11 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node server/index.js",
+    "server": "node server/index.js",
     "build": "node scripts/build.js",
-    "dev": "node scripts/start.js",
+    "start": "node scripts/start.js",
     "test": "node scripts/test.js --env=jsdom",
-    "heroku-postbuild": "node scripts/build.js",
-    "server": "concurrently --kill-others \"node server/router/api.js\" \"node server/index.js\""
+    "heroku-postbuild": "node scripts/build.js"
   },
   "jest": {
     "collectCoverageFrom": [

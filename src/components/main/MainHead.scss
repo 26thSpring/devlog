@@ -39,6 +39,14 @@
 .settings__wrapper {
   position: relative;
   z-index: 10;
+  transition: all 0.25s ease;
+  visibility: hidden;
+  opacity: 0;
+
+  &.active_settings {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 .MainHead__profile__content {
   position: absolute;
@@ -59,7 +67,7 @@
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
   margin-top: 0.1rem;
-  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
 }
 .hidden {
   position: fixed;
@@ -77,12 +85,15 @@
 .GoogleLogout {
   padding: 0;
   margin: 0;
-  text-align: start;
-  font-weight: 300;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
-  margin-top: 0.1rem;
-  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  text-align: start;
+  font-weight: 400;
   font-size: 1rem;
   color: rgba(0, 0, 0, 0.8);
+
+  &:hover {
+    cursor: pointer;
+  }
 }

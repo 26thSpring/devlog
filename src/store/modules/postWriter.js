@@ -12,6 +12,7 @@ const CLEAR_IMAGE = 'postWriter/CLEAR_IMAGE';
 const ACTIVE_SUBMIT = 'postWriter/ACTIVE_SUBMIT';
 const HIDE_SUBMIT = 'postWriter/HIDE_SUBMIT';
 const SUBMIT = 'postWriter/SUBMIT';
+const INIT_STATE = 'postWriter/INIT_STATE';
 
 export const changeTitle = createAction(CHANGE_TITLE, text => text);
 export const changeContent = createAction(CHANGE_CONTENT, text => text);
@@ -21,6 +22,7 @@ export const clearImage = createAction(CLEAR_IMAGE);
 export const activeSubmit = createAction(ACTIVE_SUBMIT, visible => visible);
 export const hideSubmit = createAction(HIDE_SUBMIT, visible => visible);
 export const submit = createAction(SUBMIT);
+export const initState = createAction(INIT_STATE);
 
 const initialState = Map({
    image: '',
@@ -51,7 +53,8 @@ export default handleActions(
          ),
       [CLEAR_IMAGE]: (state, action) => state.set('image', ''),
       [ACTIVE_SUBMIT]: (state, action) => state.set('active', true),
-      [HIDE_SUBMIT]: (state, action) => state.set('active', false)
+      [HIDE_SUBMIT]: (state, action) => state.set('active', false),
+      [INIT_STATE]: (state, action) => state.set('preview', Map())
    },
    initialState
 );

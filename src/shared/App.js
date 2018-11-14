@@ -6,10 +6,11 @@ import Main from 'components/main/Main';
 import { hot } from 'react-hot-loader';
 import { PostWriter, PostView, Profile, Login } from 'pages/index.async';
 
-const user = localStorage.getItem('devlog_user');
+let user = localStorage.getItem('devlog_user');
 
 class App extends Component {
    render() {
+      user = 'dd';
       return (
          <div className="App">
             {!user ? (

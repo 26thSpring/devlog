@@ -59,6 +59,10 @@ class PostWriterContainer extends Component {
       const { PostWriterActions } = this.props;
       PostWriterActions.hideSubmit(false);
    };
+   handleBackButton = () => {
+      const { PostWriterActions } = this.props;
+      PostWriterActions.initState();
+   };
 
    render() {
       const {
@@ -66,7 +70,8 @@ class PostWriterContainer extends Component {
          handleContentChange,
          handleImageUpload,
          handleActiveOn,
-         handleActiveOff
+         handleActiveOff,
+         handleBackButton
       } = this;
       const { image, preview, active } = this.props;
       return (
@@ -83,6 +88,7 @@ class PostWriterContainer extends Component {
                handleActiveOn={handleActiveOn}
                handleActiveOff={handleActiveOff}
                active={active}
+               onOutPage={handleBackButton}
             />
             <div className="PostWriterSection">
                <WriterContent

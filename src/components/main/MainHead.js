@@ -9,6 +9,12 @@ class MainHead extends Component {
    constructor() {
       super();
       //localStorage.setItem('devlog_user', 'foelsk56@gmail.com');
+      if (document.getElementsByClassName('settings__wrapper')[0])
+         window.document.body.onclick = () => {
+            document
+               .getElementsByClassName('settings__wrapper')[0]
+               .classList.remove('active_settings');
+         };
    }
    componentDidMount() {
       !localStorage.getItem('devlog_user')
@@ -41,7 +47,9 @@ class MainHead extends Component {
       localStorage.removeItem('devlog_user');
    };
    handleProfileClick = () => {
-      this.setState({ viewProfile: !this.state.viewProfile });
+      const settings = document.getElementsByClassName('settings__wrapper')[0];
+      console.log(settings);
+      settings.classList.toggle('active_settings');
    };
    render() {
       return (
@@ -65,35 +73,30 @@ class MainHead extends Component {
                      src={this.state.profileImage}
                      alt="aaa"
                   />
-                  {this.state.viewProfile && (
-                     <div className="settings__wrapper">
-                        <div
-                           ref={ref => {
-                              this.profileMenu = ref;
-                           }}
-                           className={`MainHead__profile__content ${!this.state
-                              .viewProfile && 'hidden'}`}
-                           tabIndex={-1}
-                        >
-                           <Link
-                              to="/profile/@devlog"
-                              className="settings_item"
-                           >
-                              내 프로필
-                           </Link>
-                           <Link to="/postwrite" className="settings_item">
-                              새 글 작성
-                           </Link>
-                           <div className="settings_item">임시 글</div>
-                           <div className="settings_item">설정</div>
-                           <GoogleLogout
-                              className="GoogleLogout"
-                              buttonText="로그아웃"
-                              onLogoutSuccess={this.googleLogout}
-                           />
-                        </div>
+
+                  <div className="settings__wrapper">
+                     <div
+                        ref={ref => {
+                           this.profileMenu = ref;
+                        }}
+                        className={'MainHead__profile__content'}
+                        tabIndex={-1}
+                     >
+                        <Link to="/profile/@devlog" className="settings_item">
+                           내 프로필
+                        </Link>
+                        <Link to="/postwrite" className="settings_item">
+                           새 글 작성
+                        </Link>
+                        <div className="settings_item">임시 글</div>
+                        <div className="settings_item">설정</div>
+                        <GoogleLogout
+                           className="GoogleLogout"
+                           buttonText="로그아웃"
+                           onLogoutSuccess={this.googleLogout}
+                        />
                      </div>
-                  )}
+                  </div>
                </div>
             )}
          </div>
